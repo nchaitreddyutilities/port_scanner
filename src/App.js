@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SideNav from './components/sideNav';
+import MainBody from './components/mainBody';
 
-class App extends Component {
+class App extends Component { 
+    mbStyling={
+        //minHeight:'660px',
+        backgroundColor:'#101010',
+        //overflow:'hidden'
+
+    };
+    snStyling={
+        //minHeight:'650px',
+        backgroundColor:'black',
+        //overflow:'hidden'
+    };
+    hbissue={
+        //overflow:'hidden',
+        minHeight:'650px'
+            };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="row" style={this.hbissue}>
+        <div className="col-sm-2" style={this.snStyling}>
+          <SideNav />
+        </div>
+        <div className="col-sm-10" style={this.mbStyling}>
+          <MainBody />
+        </div>
       </div>
     );
   }
